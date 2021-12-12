@@ -1,22 +1,23 @@
-/* Part One */
-
 let horizontal = 0;
 
 let depth = 0;
+
+let aim = 0;
 
 directions.forEach((direction) => {
   let output = Number(direction.split(/[, ]+/).pop());
 
   if (direction.includes("forward")) {
     horizontal += output;
+    depth += aim * output;
   }
 
   if (direction.includes("up")) {
-    depth -= output;
+    aim -= output;
   }
 
   if (direction.includes("down")) {
-    depth += output;
+    aim += output;
   }
 });
 
